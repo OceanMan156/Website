@@ -1,0 +1,19 @@
+{
+  "name": "website",
+  "version": "0.0.0",
+  "description": "Website",
+  "main": "Server.js",
+  "author": "",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.12.7",
+    "morgan": "^1.10.0",
+    "prompt": "^1.1.0"
+  }
+}

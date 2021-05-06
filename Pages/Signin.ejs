@@ -1,0 +1,24 @@
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+    <h1>Create Order</h1>
+
+    <%- include('./partials/nav.ejs') %>
+
+    <div class="Sign-in">
+        <h2>Sign in</h2>
+        <form action="/Signedin" method="POST">
+            <label for="Username">Username:</label>
+            <input type="text" id="Username" name="Username" required>
+            <label for="Password">Password:</label>
+            <input type="password" type="text" id="Password" name="Password" required>
+            <button>Submit</button>
+        </form>
+    </div>
+    <div class="Sign-up">
+        <form action="/Signup" method="GET">
+            <p>Dont have an account</p>
+            <button> SignUp </button>
+        </form>
+    </div>
+</body>

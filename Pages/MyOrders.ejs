@@ -1,0 +1,25 @@
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+    <h1>My Orders</h1>
+    <%- include('./partials/SignedNav.ejs') %>
+    <div class="Orders">
+        <h2>All orders</h2>
+        <%var num = 1%>
+        <% if(Order.length > 0){ %>
+            <% Order.forEach(Order => { %>
+
+                <a class="single" href="/OrderPage/<%= Order._id%>">
+                <h3> Order Num: <%=num++%> </h3>
+                <p class ="Name">Name: <%= Order.Name%> </p>
+                <p class ="Design">Design: <%= Order.Design%> </p>
+                </a>
+
+            <% }) %>
+        <% } else { %>
+            <p>No Orders</p>
+        <% } %>
+
+    </div>
+</body>
+</html>
