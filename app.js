@@ -71,12 +71,7 @@ app.post('/Signedin', (req, res) => {
 });
 
 app.get('/Signedin/User/:id', (req, res) => {
-    //const id =  
-    console.log(req.params.id);
     const id = req.params.id;
-    Order.find({ UserID: id }, function (err, doc) {
-        console.log(doc);
-    });
     Order.find({ UserID: id })
         .then((result) => {
             User.findById(id)
@@ -88,16 +83,13 @@ app.get('/Signedin/User/:id', (req, res) => {
         .catch((err) => {
             console.log(err);
         })
-    //User.find({ Username: /^Ant/, Password: /^Ant/ }, callback);
 });
 
 app.get('/CreateOrder/:id', (req, res) => {
-    console.log('sdfsdf');
-    console.log(req.params.id);
     const id = req.params.id;
     User.findById(id)
         .then((result) => {
-            res.render('OrderPageSinged', { title: 'Create Order' ,User: result})
+            res.render('OrderPageSigned', { title: 'Create Order' ,User: result})
         })
     
 })
@@ -110,8 +102,6 @@ app.post('/CreateOrder/:id', (req, res) => {
         .then((result) => {
             User.findById(id)
                 .then((result1) => {
-                    console.log(result1.id);
-                    //res.render('OrderPageSinged', { title: 'Create Order', User: result })
                     const URL = '/Signedin/User/' + result1.id;
                     res.redirect(URL);
             })
@@ -130,7 +120,8 @@ app.post('/SignedUp', (req, res) => {
     console.log(req.body.Username);
     User.find({ Username: req.body.Username }, function (err, doc) {
         console.log(doc[0]);
-        if (doc.length < 1) {
+        console.log(doc.length);
+        if (!doc.length >= 1) {
             const user = new User(req.body);
             user.save()
                 .then((result) => {
@@ -138,6 +129,7 @@ app.post('/SignedUp', (req, res) => {
                 })
                 .catch((err) => {
                     console.log(err);
+                    res.redirect('/SignUp');
                 })
         } else {
             res.redirect('/SignUp');
@@ -168,17 +160,6 @@ app.post('/OrderPage', (req, res) => {
         })
         .catch((err) => {
             console.log(err);
-        })
-})
-
-app.get('/Signup', (req, res) => {
-    const user = new User({
-        Username: 'Ant',
-        Password: 'Ant'
-    });
-    user.save()
-        .then((result) => {
-            res.redirect('/Homepage');
         })
 })
 

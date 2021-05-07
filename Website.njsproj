@@ -40,9 +40,10 @@
     <Content Include="package.json" />
     <Content Include="Pages\MyOrders.ejs" />
     <Content Include="Pages\OrderPage.ejs" />
-    <Content Include="Pages\OrderPageSinged.ejs" />
+    <Content Include="Pages\OrderPageSigned.ejs" />
     <Content Include="Pages\partials\head.ejs" />
     <Content Include="Pages\partials\nav.ejs" />
+    <Content Include="Pages\partials\SignedHead.ejs" />
     <Content Include="Pages\partials\SignedNav.ejs" />
     <Content Include="Pages\Signin.ejs" />
     <Content Include="Pages\SignUp.ejs" />
