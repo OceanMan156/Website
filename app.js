@@ -9,7 +9,7 @@ const app = express();
 
 //Start App with nodemon
 //connect to mongoDb
-const dbURI = 'mongodb+srv://OceanMan:test1234@orders.ioiuw.mongodb.net/WebShop?retryWrites=true&w=majority'
+const dbURI = 'mongodb+srv://databaseUser@orders.ioiuw.mongodb.net/WebShop?retryWrites=true&w=majority'
 mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
